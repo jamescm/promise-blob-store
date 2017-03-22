@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cory-james/promise-blob-store.git"
+    "url": "https://github.com/jamescm/promise-blob-store.git"
   },
   "author": "Cory James (@jamescm)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cory-james/promise-blob-store/issues"
+    "url": "https://github.com/jamescm/promise-blob-store/issues"
   },
-  "homepage": "https://github.com/cory-james/promise-blob-store",
+  "homepage": "https://github.com/jamescm/promise-blob-store",
   "scripts": {
     "test": "tape test.js"
   },

@@ -1,16 +1,16 @@
-var mkdirp = require('mkdirp')
-var LRU = require('lru-cache')
-var duplexify = require('duplexify')
-var path = require('path')
-var fs = require('fs-promise')
+const mkdirp = require('mkdirp')
+const LRU = require('lru-cache')
+const duplexify = require('duplexify')
+const path = require('path')
+const fs = require('fs-promise')
 
-var noop = function() {}
+let noop = function() {}
 
-var join = function(root, dir) {
+let join = function(root, dir) {
   return path.join(root, path.resolve('/', dir).replace(/^[a-zA-Z]:/, ''))
 }
 
-var BlobStore = function(opts) {
+let BlobStore = function(opts) {
   if (!(this instanceof BlobStore)) return new BlobStore(opts)
   if (typeof opts === 'string') opts = {path:opts}
 
@@ -22,13 +22,13 @@ BlobStore.prototype.createWriteStream = function(opts) {
   if (typeof opts === 'string') opts = { key:opts }
   if (opts.name && !opts.key) opts.key = opts.name
 
-  var key = join(this.path, opts.key)
-  var dir = path.dirname(key)
-  var cache = this.cache
+  let key = join(this.path, opts.key)
+  let dir = path.dirname(key)
+  let cache = this.cache
 
   if (cache.get(dir)) return fs.createWriteStream(key, opts)
 
-  var proxy = listen(duplexify(), opts, cb)
+  let proxy = duplexify()
 
   proxy.setReadable(false)
 
@@ -49,14 +49,14 @@ BlobStore.prototype.createReadStream = function(key, opts) {
 
 BlobStore.prototype.exists = function(opts, cb) {
   if (typeof opts === 'string') opts = {key:opts}
-  var key = join(this.path, opts.key)
+  let key = join(this.path, opts.key)
   return fs.stat(key)
 }
 
 BlobStore.prototype.remove = function(opts, cb) {
   if (typeof opts === 'string') opts = {key:opts}
   if (!opts) opts = noop
-  var key = join(this.path, opts.key)
+  let key = join(this.path, opts.key)
   return fs.unlink(key)
 }
 
