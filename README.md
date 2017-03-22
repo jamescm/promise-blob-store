@@ -1,9 +1,9 @@
-# fs-blob-store
+# promises-blob-store
 
-[blob store](https://github.com/maxogden/abstract-blob-store) that stores blobs on the local file system
+[blob store](https://github.com/maxogden/abstract-blob-store) that stores blobs on the local file system using promises
 
 ```
-npm install fs-blob-store
+npm install promise-blob-store
 ```
 
 [![build status](http://img.shields.io/travis/mafintosh/fs-blob-store.svg?style=flat)](http://travis-ci.org/mafintosh/fs-blob-store)

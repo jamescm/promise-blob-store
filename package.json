@@ -1,13 +1,13 @@
 {
-  "name": "fs-blob-store",
-  "version": "5.2.1",
-  "description": "blob store that stores blobs on the local file system",
+  "name": "promise-blob-store",
+  "version": "1.0.0",
+  "description": "fs-blob-store with promises",
   "main": "index.js",
   "dependencies": {
     "duplexify": "^3.2.0",
-    "end-of-stream": "^1.0.0",
     "lru-cache": "^2.5.0",
-    "mkdirp": "^0.5.0"
+    "mkdirp": "^0.5.0",
+    "fs-promise": "^2.0.0"
   },
   "devDependencies": {
     "abstract-blob-store": "^3.1.0",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mafintosh/fs-blob-store.git"
+    "url": "https://github.com/cory-james/promise-blob-store.git"
   },
-  "author": "Mathias Buus (@mafintosh)",
+  "author": "Cory James (@jamescm)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mafintosh/fs-blob-store/issues"
+    "url": "https://github.com/cory-james/promise-blob-store/issues"
   },
-  "homepage": "https://github.com/mafintosh/fs-blob-store",
+  "homepage": "https://github.com/cory-james/promise-blob-store",
   "scripts": {
     "test": "tape test.js"
   },
@@ -33,6 +33,7 @@
     "fs",
     "file",
     "system",
-    "local"
+    "local",
+    "promise"
   ]
 }
